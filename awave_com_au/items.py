@@ -24,5 +24,4 @@ class ProductDetailItem(scrapy.Item):
      description = scrapy.Field()
      sku = scrapy.Field()
      rrp = scrapy.Field()
-     price = scrapy.Field()
      pass

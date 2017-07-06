@@ -70,9 +70,9 @@ ITEM_PIPELINES = [
 
 ELASTICSEARCH_SERVERS = 'http://search-spotlite-n2y7ob5yspdm54tbtp26hchjbq.ap-southeast-2.es.amazonaws.com:80' 
 ELASTICSEARCH_INDEX = 'awave'
-ELASTICSEARCH_INDEX_DATE_FORMAT = '%Y-%m-%d'
+# ELASTICSEARCH_INDEX_DATE_FORMAT = '%Y-%m-%d'
 ELASTICSEARCH_TYPE = 'crawl'
-ELASTICSEARCH_UNIQ_KEY = 'url'
+# ELASTICSEARCH_UNIQ_KEY = 'url'
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
 # NOTE: AutoThrottle will honour the standard settings for concurrency and delay
