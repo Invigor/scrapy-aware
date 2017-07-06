@@ -1,0 +1,19 @@
+import scrapy
+
+
+class ProductListSpider(scrapy.Spider):
+    name = "ProductList"
+    start_urls = [
+            'https://www.awave.com.au/product-category/microphones/',
+        ]
+
+    def parse(self, response):
+       yield {
+           'name': response.xpath('//*[@class="woocommerce-loop-product__title"]/text()').extract(),
+           'price': response.xpath('//*[@class="woocommerce-Price-amount amount"]/text()').extract(),
+	   'url': response.css('.woocommerce-LoopProduct-link::attr(href)').extract(),
+             }
+       next_page = response.css('.page-numbers::attr(href)').extract_first()
+       if next_page is not None:
+            next_page = response.urljoin(next_page)
+            yield scrapy.Request(next_page, callback=self.parse)
