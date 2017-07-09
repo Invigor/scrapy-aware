@@ -10,10 +10,7 @@ import scrapy
 
 class ProductListItem(scrapy.Item):
     # define the fields for your item here like:
-     url = scrapy.Field()
      producturl = scrapy.Field()
-     price = scrapy.Field()
-     name = scrapy.Field()
      pass
 
 class ProductDetailItem(scrapy.Item):
@@ -24,4 +21,8 @@ class ProductDetailItem(scrapy.Item):
      description = scrapy.Field()
      sku = scrapy.Field()
      rrp = scrapy.Field()
+     brand = scrapy.Field()
+     category = scrapy.Field()
+     site = scrapy.Field()
+
      pass

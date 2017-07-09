@@ -29,27 +29,27 @@ class ProductList(CrawlSpider):
         self.logger.info('Hi, this is an item page! %s', response.url)
         product = ProductListItem()
 
-        product['url'] = response.url
-	prices = response.xpath('//*[@class="woocommerce-Price-currencySymbol"]/following-sibling::text()').extract()
-	names = response.xpath('//*[@class="woocommerce-loop-product__title"]/text()').extract()
+        # product['url'] = response.url
+	# prices = response.xpath('//*[@class="woocommerce-Price-currencySymbol"]/following-sibling::text()').extract()
+	# names = response.xpath('//*[@class="woocommerce-loop-product__title"]/text()').extract()
 	producturls = response.css('.woocommerce-LoopProduct-link::attr(href)').extract() 
 
 	# print(prices)
 	# print(names)
 	# print(producturls)
 
-	print('Products on this page: %s',len(names))
+	# print('Products on this page: %s',len(names))
 
-	for i in xrange(0,len(names)):
-	   if len(prices) > i:
-              product['price'] = prices[i]
-	   else:
-	       product['price'] = '0.00'
-           product['name'] = names[i]
-           if len(prices) > i:
-               product['producturl'] = producturls[i]
-	   else:
-	       product['producturl'] = ''
+	for i in xrange(0,len(producturls)):
+	   # if len(prices) > i:
+           #    product['price'] = prices[i]
+	   # else:
+	   #     product['price'] = '0.00'
+           # product['name'] = names[i]
+           # if len(prices) > i:
+           product['producturl'] = producturls[i]
+	   #else:
+	   #    product['producturl'] = ''
 	   # self.logger.info('Processing:! %s', names[i])
            yield product
 

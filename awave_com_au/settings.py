@@ -64,10 +64,11 @@ USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36
 #ITEM_PIPELINES = {
 #    'danmurphys.pipelines.DanmurphysPipeline': 300,
 #}
-ITEM_PIPELINES = [
-  'scrapyelasticsearch.scrapyelasticsearch.ElasticSearchPipeline',
-]
+# ITEM_PIPELINES = [
+#   'scrapyelasticsearch.scrapyelasticsearch.ElasticSearchPipeline',
+# ]
 
+# ElasticSearch package parameters
 ELASTICSEARCH_SERVERS = 'http://search-spotlite-n2y7ob5yspdm54tbtp26hchjbq.ap-southeast-2.es.amazonaws.com:80' 
 ELASTICSEARCH_INDEX = 'awave'
 # ELASTICSEARCH_INDEX_DATE_FORMAT = '%Y-%m-%d'
